@@ -14,7 +14,7 @@ export default function Cart() {
         <thead>
           <tr>
             <th />
-            <th>PRODUTO</th>
+            <th>PRODUCT</th>
             <th>QTD</th>
             <th>SUBTOTAL</th>
             <th />
@@ -25,12 +25,12 @@ export default function Cart() {
             <td>
               <img
                 src="https://http2.mlstatic.com/maquina-de-cortar-cabelo-6-em-1-barba-pelo-corpo-bodygroom-D_NQ_NP_819087-MLB32146670691_092019-F.webp"
-                alt="Maquina"
+                alt="Machine"
               />
             </td>
             <td>
-              <strong>Máquina Maluca</strong>
-              <span>R$129,90</span>
+              <strong>Crazy Machine</strong>
+              <span>$129,90</span>
             </td>
             <td>
               <div>
@@ -44,7 +44,7 @@ export default function Cart() {
               </div>
             </td>
             <td>
-              <strong>R$258,80</strong>
+              <strong>$258,80</strong>
             </td>
             <td>
               <button type="button">
@@ -56,11 +56,11 @@ export default function Cart() {
       </ProductTable>
 
       <footer>
-        <button type="button">Finalizar pedido</button>
+        <button type="button">PLACE ORDER</button>
 
         <Total>
           <span>TOTAL</span>
-          <strong>R$1920,00</strong>
+          <strong>$1920,00</strong>
         </Total>
       </footer>
     </Container>
