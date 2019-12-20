@@ -15,12 +15,16 @@ export const ProductList = styled.ul`
 
     > span {
       margin-bottom: 20px;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 25px;
     }
   }
 
   img {
     align-self: center;
-    max-width: 250px;
+    width: 250px;
+    height: 250px;
   }
 
   > strong {

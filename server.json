@@ -28,37 +28,37 @@
   "products": [
     {
       "id": 1,
-      "title": "Tesoura Profissional",
+      "title": "Professional Scissors",
       "price": 59.9,
       "image": "https://http2.mlstatic.com/tesoura-fio-laser-desfiadeira-navalha-profissional-kit-c-3-D_NQ_NP_922559-MLB40022204780_122019-F.webp"
     },
     {
       "id": 2,
-      "title": "Kit 2 Espumas Barbear",
+      "title": "Kit 2 Shaving Foam",
       "price": 139.9,
       "image": "https://http2.mlstatic.com/kit-2-shave-cream-280-ml-creme-de-barbear-baboon-D_NQ_NP_804712-MLB32542322505_102019-F.webp"
     },
     {
       "id": 3,
-      "title": "Máquina Kamei",
+      "title": "Kamei Machine",
       "price": 219.9,
       "image": "https://http2.mlstatic.com/maquina-kemei-de-acabamento-profissional-km3202-oferta-D_NQ_NP_933199-MLB32193821071_092019-F.webp"
     },
     {
       "id": 5,
-      "title": "Shaver Kamei",
+      "title": "Kamei Shaver",
       "price": 139.9,
       "image": "https://http2.mlstatic.com/maquina-barbeador-kemei-shaver-km-2024-bivolt-oferta-D_NQ_NP_633339-MLB32193567186_092019-O.webp"
     },
     {
       "id": 6,
-      "title": "Navalha do Seu Zé",
+      "title": "Seu Zé's Razor",
       "price": 99.9,
       "image": "https://http2.mlstatic.com/navalhete-com-3-pentes-de-desfiar-em-aco-inox-marco-boni-D_NQ_NP_892804-MLB31199956342_062019-O.webp"
     },
     {
       "id": 4,
-      "title": "Cadeira Barbearia",
+      "title": "Barber's Chair",
       "price": 679.9,
       "image": "https://http2.mlstatic.com/poltrona-cadeira-dubai-reclinavel-moveis-barbeiro-barbearia-D_NQ_NP_914086-MLB31080392509_062019-O.webp"
     }

@@ -1,106 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
+import api from '../../services/api';
+import { formatPrice } from '../../util/format';
 
 import { ProductList } from './styles';
 
-export default function Home() {
-  return (
-    <ProductList>
-      <li>
-        <img
-          src="https://http2.mlstatic.com/maquina-de-cortar-cabelo-6-em-1-barba-pelo-corpo-bodygroom-D_NQ_NP_819087-MLB32146670691_092019-F.webp"
-          alt="Machine"
-        />
-        <strong>Crazy Machine</strong>
-        <span>$129,90</span>
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF" /> 3
-          </div>
+export default class Home extends Component {
+  state = { products: [] };
 
-          <span>ADD TO CART</span>
-        </button>
-      </li>
+  async componentDidMount() {
+    const response = await api.get('/products');
 
-      <li>
-        <img
-          src="https://http2.mlstatic.com/maquina-de-cortar-cabelo-6-em-1-barba-pelo-corpo-bodygroom-D_NQ_NP_819087-MLB32146670691_092019-F.webp"
-          alt="Machine"
-        />
-        <strong>Crazy Machine</strong>
-        <span>$129,90</span>
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF" /> 3
-          </div>
+    const data = response.data.map(product => ({
+      ...product,
+      priceFormatted: formatPrice(product.price),
+    }));
 
-          <span>ADD TO CART</span>
-        </button>
-      </li>
+    this.setState({ products: data });
+  }
 
-      <li>
-        <img
-          src="https://http2.mlstatic.com/maquina-de-cortar-cabelo-6-em-1-barba-pelo-corpo-bodygroom-D_NQ_NP_819087-MLB32146670691_092019-F.webp"
-          alt="Machine"
-        />
-        <strong>Crazy Machine</strong>
-        <span>$129,90</span>
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF" /> 3
-          </div>
+  render() {
+    const { products } = this.state;
 
-          <span>ADD TO CART</span>
-        </button>
-      </li>
+    return (
+      <ProductList>
+        {products.map(product => (
+          <li key={product.id}>
+            <img src={product.image} alt={product.title} />
+            <strong>{product.title}</strong>
+            <span>{product.priceFormatted}</span>
+            <button type="button">
+              <div>
+                <MdAddShoppingCart size={16} color="#FFF" /> 3
+              </div>
 
-      <li>
-        <img
-          src="https://http2.mlstatic.com/maquina-de-cortar-cabelo-6-em-1-barba-pelo-corpo-bodygroom-D_NQ_NP_819087-MLB32146670691_092019-F.webp"
-          alt="Machine"
-        />
-        <strong>Crazy Machine</strong>
-        <span>$129,90</span>
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF" /> 3
-          </div>
-
-          <span>ADD TO CART</span>
-        </button>
-      </li>
-
-      <li>
-        <img
-          src="https://http2.mlstatic.com/maquina-de-cortar-cabelo-6-em-1-barba-pelo-corpo-bodygroom-D_NQ_NP_819087-MLB32146670691_092019-F.webp"
-          alt="Machine"
-        />
-        <strong>Crazy Machine</strong>
-        <span>$129,90</span>
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF" /> 3
-          </div>
-
-          <span>ADD TO CART</span>
-        </button>
-      </li>
-
-      <li>
-        <img
-          src="https://http2.mlstatic.com/maquina-de-cortar-cabelo-6-em-1-barba-pelo-corpo-bodygroom-D_NQ_NP_819087-MLB32146670691_092019-F.webp"
-          alt="Machine"
-        />
-        <strong>Crazy Machine</strong>
-        <span>$129,90</span>
-        <button type="button">
-          <div>
-            <MdAddShoppingCart size={16} color="#FFF" /> 3
-          </div>
-
-          <span>ADD TO CART</span>
-        </button>
-      </li>
-    </ProductList>
-  );
+              <span>ADD TO CART</span>
+            </button>
+          </li>
+        ))}
+      </ProductList>
+    );
+  }
 }
